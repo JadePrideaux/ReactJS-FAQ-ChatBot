@@ -46,6 +46,7 @@ ReactJS-FAQ-ChatBot
 - Decide on development methodology ✅
 - Gather resources: dataset and pre-trained model ✅
 - Create readme structure ✅
+- Plan structure of notebook ✅
 
 **Design:**
 - Project setup  
