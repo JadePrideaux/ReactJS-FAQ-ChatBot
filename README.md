@@ -39,43 +39,59 @@ ReactJS-FAQ-ChatBot
 ## Development Methodology and Planning
 
 ### Sprint 1: ML Prototype | 17/09/25 – Current
-**Plan (17/09/25 – 18/09/25):**
+**Plan:**
 - Define project scope ✅
 - Decide tech stack ✅
-- Consider approach to solution ✅
+- Outline approach: sentence embedding + cosine similarity retrieval ✅
 - Decide on development methodology ✅
 - Gather resources: dataset and pre-trained model ✅
-- Create readme structure ✅
-- Plan structure of notebook ✅
+- Create README and sprint structure ✅
+- Plan notebook sections ✅
 
 **Design:**
-- Project setup ✅
-- Define preprocessing steps  
-- Choose similarity metric  
+- Setup project, imports and notebook enviroment ✅
+- Define preprocessing steps ✅
+- Select simularity metric: cosine (standard) ✅
 
 **Develop:**
-- Load dataset ✅
-- Implement preprocessing  
-- Generate embeddings  
-- Implement function to retrieve top-N answers  
+- Load dataset from Kaggle ✅
+- Create clean Q and A pairs ✅
+- Split dataset ✅
+- Generate embeddings ✅
+- Semantic Search retrieval ✅
 
 **Test:**
-- Run sample queries in notebook  
-- Evaluate results on test set  
+- Compare test sets question and answer similarity ✅
+- Compare similarity of top 3 answers with new questions ✅
+- Compare similarity score between chosen answers and correct answers ✅
 
 **Deploy:**
-- Notebook prototype runnable locally  
+- Notebook prototype runnable locally ✅
 
 **Review:**
-- Analyse results  
-- Identify improvements  
+- Analyses similarity scores
 
 ---
 
 ### Sprint 2: Backend API | Start Goal: 29/09/25
-- Wrap ML logic in Flask API  
-- Implement API endpoint  
-- Test API  
+
+***Plan:**
+- Understand how flask works and how to build the backend of this system
+
+**Design:**
+- 
+
+**Develop:**
+- Function that takes string input and returns results from model
+
+**Test:**
+- 
+
+**Deploy:**
+- 
+
+**Review:**
+-  
 
 ---
 
@@ -96,3 +112,6 @@ ReactJS-FAQ-ChatBot
 - **Challenge**: Understood how to implement a FAQ chatbot that accurately retrieves relevant answers to questions.  
 - **Action**: Learned about semantic search and explored the concept of mapping questions to answers in the same vector space.  
 - **Result**: Gained understanding of the approach and developed a foundation to start building a ML prototype.
+
+- **Challenge**: Issues with Python Virtual machine - consider using UV in future 
+
