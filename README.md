@@ -40,7 +40,7 @@ ReactJS-FAQ-ChatBot
 
 ## Development Methodology and Planning
 
-### Sprint 1: ML Prototype | 17/09/25 – Current
+### Sprint 1: ML Prototype | 17/09/25 – 28/09/25
 
 **Plan:**
 
@@ -82,33 +82,30 @@ ReactJS-FAQ-ChatBot
 
 ---
 
-### Sprint 2: Backend API | Start Goal: 29/09/25
+### Sprint 2: Backend API | 29/09/25 - Current
 
 **\*Plan:**
 
-- Understand how flask works and how to build the backend of this system
+- Understand how flask works and how to build the backend of this system ✅
 
 **Design:**
 
--
+- Create folder structure ✅
 
 **Develop:**
 
-- Function that takes string input and returns results from model
+- Create ask api route ✅
+- Create main.py with blueprint reference to api ✅
 
 **Test:**
 
--
+- Create placeholder get_answer method and test api ✅
 
 **Deploy:**
 
--
+- **Review:**
 
-**Review:**
-
--
-
----
+- ***
 
 ### Sprint 3: Frontend | Start Goal: 06/10/25
 
