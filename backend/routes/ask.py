@@ -1,5 +1,6 @@
 from flask import Blueprint, jsonify, request
-from logic.getanswers import get_answer
+
+from backend.logic.get_answers import get_answer
 
 ask_bp = Blueprint("ask", __name__)
 

@@ -1,3 +1,5 @@
+# Script to download the dataset locally
+
 import os
 import shutil
 
