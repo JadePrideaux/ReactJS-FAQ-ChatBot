@@ -96,6 +96,7 @@ ReactJS-FAQ-ChatBot
 
 - Create ask api route ✅
 - Create main.py with blueprint reference to api ✅
+- Create scripts to get data and generate embeddings for answers ✅
 
 **Test:**
 
