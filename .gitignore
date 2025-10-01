@@ -212,3 +212,6 @@ __marimo__/
 node_modules/
 dist/
 build/
+
+# Ignore dataset
+backend/data/
