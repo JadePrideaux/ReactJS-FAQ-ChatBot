@@ -97,16 +97,22 @@ ReactJS-FAQ-ChatBot
 - Create ask api route ✅
 - Create main.py with blueprint reference to api ✅
 - Create scripts to get data and generate embeddings for answers ✅
+- Implement get_answers method to retrieve top-k answers and similarity scores ✅
+- Separate data and model loading to run on startup ✅
 
 **Test:**
 
 - Create placeholder get_answer method and test api ✅
+- Verify correct JSON output ✅
 
 **Deploy:**
 
-- **Review:**
+- Backend server runs locally and responds to /ask ✅
 
-- ***
+**Review:**
+
+- Confirm api fully functional
+- JSON response includes both answer text and similarity scores ✅
 
 ### Sprint 3: Frontend | Start Goal: 06/10/25
 
