@@ -84,7 +84,7 @@ ReactJS-FAQ-ChatBot
 
 ### Sprint 2: Backend API | 29/09/25 - Current
 
-**\*Plan:**
+**Plan:**
 
 - Understand how flask works and how to build the backend of this system ✅
 
