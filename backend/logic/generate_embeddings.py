@@ -14,7 +14,7 @@ answers = df["answer"].dropna().tolist()
 embedder = SentenceTransformer("all-MiniLM-L6-v2")
 
 # Generate embeddings
-answer_embeddings = embedder.encode(answers, convert_to_tensor=True, show_progress_bar=True)
+answer_embeddings = embedder.encode_document(answers, convert_to_tensor=True, show_progress_bar=True)
 
 # Save embeddings and answers
 torch.save(answer_embeddings, "backend/data/answer_embeddings.pt")

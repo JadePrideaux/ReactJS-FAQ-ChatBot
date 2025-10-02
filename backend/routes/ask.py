@@ -1,6 +1,5 @@
 from flask import Blueprint, jsonify, request
-
-from backend.logic.get_answers import get_answer
+from logic.get_answers import get_answers
 
 ask_bp = Blueprint("ask", __name__)
 
@@ -8,9 +7,10 @@ ask_bp = Blueprint("ask", __name__)
 def ask():
   # Get the request data
   data = request.get_json()
-  # Get the question from the request
+  # Get the question and the top_k from the request
   question = data.get("question", "")
+  top_k = int(data.get("top_k"))
   # Get the answer based on the given question
-  answer = get_answer(question)
+  answers = get_answers(question, top_k)
   # Return a json object with the answer
-  return jsonify({"answer": answer})
+  return jsonify({"answers": answers})
