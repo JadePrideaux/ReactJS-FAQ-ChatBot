@@ -114,6 +114,8 @@ ReactJS-FAQ-ChatBot
 - Confirm api fully functional
 - JSON response includes both answer text and similarity scores ✅
 
+---
+
 ### Sprint 3: Frontend | Start Goal: 06/10/25
 
 - Build React form to input questions
