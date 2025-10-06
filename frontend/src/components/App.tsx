@@ -1,34 +1,72 @@
 import { useState } from "react";
-import reactLogo from "../assets/react.svg";
 import "../styles/App.css";
-import viteLogo from "/vite.svg";
 
 function App() {
-  const [count, setCount] = useState(0);
+  const [question, setQuestion] = useState("");
+  const [answerText, setAnswerText] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+
+  const ask = async () => {
+    if (!question.trim()) {
+      return;
+    }
+
+    setLoading(true);
+    setError(null);
+
+    try {
+      const result = await fetch("/ask", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          question,
+          top_k: 3,
+        }),
+      });
+
+      if (!result.ok) {
+        throw new Error(`HTTP error: ${result.status}`);
+      }
+
+      const data = await result.json();
+      setAnswerText(JSON.stringify(data, null, 2));
+    } catch (err: unknown) {
+      if (err instanceof Error) {
+        setError(err.message);
+      }
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
-    <>
+    <div>
+      <h1>Ask Something</h1>
+
       <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
+        <input
+          type="text"
+          value={question}
+          onChange={(e) => setQuestion(e.target.value)}
+          placeholder="Enter your question"
+        />
+        <button onClick={ask} disabled={loading}>
+          {loading ? "Loading..." : "Send"}
         </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+
+      {error && <p style={{ color: "red" }}>{error}</p>}
+
+      {answerText !== null && (
+        <div>
+          <strong>Answer:</strong>
+          <p>{answerText}</p>
+        </div>
+      )}
+    </div>
   );
 }
 
