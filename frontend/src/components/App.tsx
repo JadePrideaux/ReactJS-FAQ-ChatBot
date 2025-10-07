@@ -2,12 +2,15 @@ import { useState } from "react";
 import "../styles/App.css";
 
 function App() {
-  const [question, setQuestion] = useState("");
-  const [answerText, setAnswerText] = useState("");
-  const [loading, setLoading] = useState(false);
+  // useStates to store the question/answer strings
+  const [question, setQuestion] = useState<string>("");
+  const [answerText, setAnswerText] = useState<string>("");
+  // useStates to store loading bool and error message
+  const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
 
   const ask = async () => {
+    // if the string is just whitespace, return
     if (!question.trim()) {
       return;
     }
@@ -16,6 +19,7 @@ function App() {
     setError(null);
 
     try {
+      // try to fetch the result
       const result = await fetch("/ask", {
         method: "POST",
         headers: {
@@ -23,21 +27,26 @@ function App() {
         },
         body: JSON.stringify({
           question,
-          top_k: 3,
+          top_k: 1,
         }),
       });
 
+      // if result is not okay, throw error
       if (!result.ok) {
         throw new Error(`HTTP error: ${result.status}`);
       }
 
+      // get the data from the result
       const data = await result.json();
+      // set the answer as
       setAnswerText(JSON.stringify(data, null, 2));
     } catch (err: unknown) {
+      // if something else happens, get the error and set the error message
       if (err instanceof Error) {
         setError(err.message);
       }
     } finally {
+      // once everything is done, set loading to false
       setLoading(false);
     }
   };
