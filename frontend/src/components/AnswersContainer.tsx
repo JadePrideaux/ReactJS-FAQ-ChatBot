@@ -1,14 +1,18 @@
+import type { Answer } from "../hooks/useAnswers";
+import AnswerCard from "./AnswerCard";
+
 type Props = {
-  answerText: string;
+  answers: Answer[];
 };
 
-const AnswersContainer = ({ answerText }: Props) => {
+const AnswersContainer = ({ answers }: Props) => {
   return (
     <>
-      {answerText !== null && (
+      {answers.length > 0 && (
         <div>
-          <strong>Answer:</strong>
-          <p>{answerText}</p>
+          {answers.map((answer: Answer, i: number) => (
+            <AnswerCard key={i} {...answer} />
+          ))}
         </div>
       )}
     </>

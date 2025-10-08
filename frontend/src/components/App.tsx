@@ -6,14 +6,14 @@ import QuestionBox from "./QuestionBox";
 import Title from "./Title";
 
 function App() {
-  const { answerText, loading, error, fetchAnswers } = useAnswers();
+  const { answers, loading, error, fetchAnswers } = useAnswers();
 
   return (
     <>
       <Title />
       <QuestionBox onAsk={fetchAnswers} loading={loading} />
       <Error error={error} />
-      <AnswersContainer answerText={answerText} />
+      <AnswersContainer answers={answers} />
     </>
   );
 }

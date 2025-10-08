@@ -1,17 +1,20 @@
 import { useState } from "react";
 
+export type Answer = {
+  answer: string;
+  score?: number;
+};
+
 export const useAnswers = () => {
   // useStates to store the answer strings
-  const [answerText, setAnswerText] = useState<string>("");
+  const [answers, setAnswers] = useState<Answer[]>([]);
   // useStates to store loading bool and error message
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
 
   const fetchAnswers = async (question: string, top_k: number = 3) => {
     // if the string is just whitespace, return
-    if (!question.trim()) {
-      return;
-    }
+    if (!question.trim()) return;
 
     setLoading(true);
     setError(null);
@@ -37,7 +40,11 @@ export const useAnswers = () => {
       // get the data from the result
       const data = await result.json();
       // set the answer as
-      setAnswerText(JSON.stringify(data, null, 2));
+      if (Array.isArray(data.answers)) {
+        setAnswers(data.answers);
+      } else {
+        setAnswers(data);
+      }
     } catch (err: unknown) {
       // if something else happens, get the error and set the error message
       if (err instanceof Error) {
@@ -48,5 +55,5 @@ export const useAnswers = () => {
       setLoading(false);
     }
   };
-  return { answerText, loading, error, fetchAnswers };
+  return { answers, loading, error, fetchAnswers };
 };
