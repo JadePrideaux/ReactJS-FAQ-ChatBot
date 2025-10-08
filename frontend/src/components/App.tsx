@@ -1,36 +1,20 @@
-import { useState } from "react";
 import { useAnswers } from "../hooks/useAnswers";
 import "../styles/App.css";
+import AnswersContainer from "./AnswersContainer";
+import Error from "./Error";
+import QuestionBox from "./QuestionBox";
+import Title from "./Title";
 
 function App() {
   const { answerText, loading, error, fetchAnswers } = useAnswers();
-  const [question, setQuestion] = useState<string>("");
 
   return (
-    <div>
-      <h1>React FAQ Search</h1>
-
-      <div>
-        <input
-          type="text"
-          value={question}
-          onChange={(e) => setQuestion(e.target.value)}
-          placeholder="Enter your question"
-        />
-        <button onClick={() => fetchAnswers(question, 3)} disabled={loading}>
-          {loading ? "Loading..." : "Send"}
-        </button>
-      </div>
-
-      {error && <p style={{ color: "red" }}>{error}</p>}
-
-      {answerText !== null && (
-        <div>
-          <strong>Answer:</strong>
-          <p>{answerText}</p>
-        </div>
-      )}
-    </div>
+    <>
+      <Title />
+      <QuestionBox onAsk={fetchAnswers} loading={loading} />
+      <Error error={error} />
+      <AnswersContainer answerText={answerText} />
+    </>
   );
 }
 
