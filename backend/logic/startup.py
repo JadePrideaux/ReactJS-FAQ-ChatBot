@@ -1,3 +1,5 @@
+import os
+
 import pandas as pd
 import torch
 from sentence_transformers import SentenceTransformer
@@ -7,7 +9,9 @@ print("Loading model and embeddings...")
 embedder = SentenceTransformer("all-MiniLM-L6-v2")
 
 # Load the answers and their embeddings from the file
-answer_embeddings = torch.load("backend/data/answer_embeddings.pt")
-answers = pd.read_csv("backend/data/answers.csv")["answer"].tolist()
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+answer_embeddings = torch.load(os.path.join(BASE_DIR, "../data/answer_embeddings.pt"))
+answers = pd.read_csv(os.path.join(BASE_DIR, "../data/answers.csv"))["answer"].tolist()
 
 print("Startup complete")
