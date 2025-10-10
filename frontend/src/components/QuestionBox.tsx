@@ -14,9 +14,9 @@ const QuestionBox = ({ onAsk, loading }: Props) => {
         type="text"
         value={question}
         onChange={(e) => setQuestion(e.target.value)}
-        placeholder="Enter your question"
+        placeholder="Ask anything..."
       />
-      <button onClick={() => onAsk(question, 3)} disabled={loading}>
+      <button onClick={() => onAsk(question, 10)} disabled={loading}>
         {loading ? "Loading..." : "Send"}
       </button>
     </div>

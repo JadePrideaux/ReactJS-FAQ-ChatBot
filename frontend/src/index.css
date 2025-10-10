@@ -1,1 +1,90 @@
+:root {
+  --primary-bg-color: #606470;
+  --secondary-bg-color: #323643;
+  --tertiary-bg-color: #434856;
 
+  --primary-text-color: #F7F7F7;
+  --secondary-text-color: #93DEFF;
+
+  --primary-button-color: #93DEFF;
+  --secondary-button-color: #d1f1ff;
+
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.5;
+
+  color: var(--primary-text-color);
+  background-color: var(--primary-bg-color);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  text-align: center;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+p {
+  text-align: justify;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: var(--primary-button-color);
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  background-color: var(--secondary-button-color);
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+input {
+  background-color: var(--secondary-bg-color);
+  color: var(--primary-text-color);
+  padding: 0.6em 1.2em;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  margin-right: 10px;
+  font-size: 1em;
+  font-weight: 500;
+}
+
+input::placeholder {
+  color: var(--primary-text-color);
+  opacity: 0.5;
+}
+
+input:focus, input:hover {
+  background-color: var(--tertiary-bg-color);
+}
+
+input:focus {
+  border: 0;
+}
+
+.card {
+  border-radius: 10px;
+  padding: 0.5em 2em;
+  margin: 1em;
+}
