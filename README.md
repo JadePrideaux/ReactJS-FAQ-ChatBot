@@ -116,18 +116,49 @@ ReactJS-FAQ-ChatBot
 
 ---
 
-### Sprint 3: Frontend | Start Goal: 06/10/25
+### Sprint 3: Frontend | 06/10/25 - 10/10/25
 
-- Build React form to input questions
-- Display answers
-- Add error handling and UI polish
+**Plan:**
+
+- Setup React-TS and Vite ✅
+
+**Design:**
+
+- Consider how to fetch api data and how the information should be displayed ✅
+
+**Develop:**
+
+- Create API fetch ✅
+- Create simple text input for questions ✅
+- Show stringified response on frontend ✅
+- Move API fetch logic into a custom hook ✅
+- Create separate components ✅
+- Adjust CSS, to customize layout and colors ✅
+- Change answer background color based on score ✅
+- Implement react-markup to polish text ✅
+
+**Test:**
+
+- Start by getting the API and displaying of results working and then polish ✅
+- Check formatting with different types of responses (probably could use more thorough testing to check edge cases etc) ✅
+
+**Deploy:**
+
+- System is functional across the stack ✅
+
+**Review:**
+
+- Some minor usability issues may need to be solved + more testing
+- Need to adjust API to include original question, since some of the answers require context
+- Need to check formatting of large answers, possibly hiding everything and only displaying the full answer on click
+- Need to consider mobile devices
 
 ---
 
-### Sprint 4+: Integration and Deployment | Start Goal: 13/10/25
+### Sprint 4: Fixing and Polishing | Start Goal: 13/10/25
 
-- Integrate end-to-end system
-- Consider deployment options
+- Fix main issues and general polish of project, including commenting code and documentation.
+- Consider deployment options, unsure how easy due to size of project data.
 
 ## Challenges, Actions and Results
 
