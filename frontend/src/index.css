@@ -10,6 +10,7 @@
   --secondary-button-color: #d1f1ff;
 
   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 18px;
   line-height: 1.5;
 
   color: var(--primary-text-color);
@@ -68,6 +69,7 @@ input {
   margin-right: 10px;
   font-size: 1em;
   font-weight: 500;
+  width: 80%;
 }
 
 input::placeholder {
@@ -87,4 +89,6 @@ input:focus {
   border-radius: 10px;
   padding: 0.5em 2em;
   margin: 1em;
+  text-align: justify;
+  overflow-wrap: break-word;
 }

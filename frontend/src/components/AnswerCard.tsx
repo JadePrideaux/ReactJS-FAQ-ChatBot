@@ -1,3 +1,5 @@
+import ReactMarkdown from "react-markdown";
+
 type Props = {
   answer: string;
   score?: number;
@@ -6,9 +8,9 @@ type Props = {
 const AnswerCard = ({ answer, score }: Props) => {
   let color = `rgb(255, 0, 0)`;
   if (score != null) {
-    const red = 255 - Math.round(255 * score);
-    const green = 0 + Math.round(255 * score);
-    color = `rgb(${red}, ${green}, 100)`;
+    const red = 200 - Math.round(200 * score);
+    const green = 0 + Math.round(200 * score);
+    color = `rgb(${red}, ${green}, 70)`;
   }
 
   return (
@@ -16,10 +18,9 @@ const AnswerCard = ({ answer, score }: Props) => {
       className="card"
       style={{
         backgroundColor: color,
-        transition: "background-color 0.3s ease",
       }}
     >
-      <p>{answer}</p>
+      <ReactMarkdown>{answer}</ReactMarkdown>
       {score && <small>Score: {score}</small>}
     </div>
   );
