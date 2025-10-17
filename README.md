@@ -17,7 +17,7 @@ I have studied machine learning and have been developing my full-stack skills si
 
 ## Tech Stack
 
-- **ML model**: Python, Jupyter Notebook, sentence-transformers (using PyTorch)
+- **ML model**: Python, Jupyter Notebook, sentence-transformers (using PyTorch), Kaggle
 - **Backend**: Python, Flask API
 - **Frontend**: React, Vite
 - **Version Control**: Git/GitHub
@@ -30,30 +30,29 @@ I have studied machine learning and have been developing my full-stack skills si
 
 ## Project Structure
 
-ReactJS-FAQ-ChatBot
-
-- backend/
-  - data - dataset + pregenerated embeddings, (not saved on GitHub)
-  - logic - scripts to get the dataset, generate embeddings, retrieve the answers and startup logic.
-  - routes - the API route to retrieve answers based on the given question
-- frontend/
-  - src/
-    - assets
-    - components - React components for the webpage
-    - hooks - The custom useAnswers hook that calls the API
-- notebooks/
-  - model.ipynb - the main testing notebook, running though the model and testing it on the dataset
-  - test.py - a script to test the API
-- README.md
-- .gitignore
+```bash
+├── backend
+│   ├── data - dataset + pregenerated embeddings, (not saved on GitHub)
+│   ├── logic - scripts to get the dataset, generate embeddings, retrieve the answers and startup logic.
+│   ├── routes - the API route to retrieve answers based on the given question
+├── frontend
+│   ├── src/
+│   │   ├── components - React components for the webpage
+│   │   ├── hooks - The custom useAnswers hook that calls the API
+├── notebooks
+│   ├── model.ipynb - the main testing notebook, running though the model and testing it on the dataset
+│   ├── test.py - a script to test the API
+├── README.md
+└── .gitignore
+```
 
 ## Development Methodology and Planning
 
-This project uses an agile methodology, working in sprints to iterate on subsystems and integrate them into the full system. Each sprint starts by creating a plan for the sprint then designing how the system will adapt to align with that plan. Then development will be done followed by some simple testing to ensure the plan is implemented. Each sprint aims to have some workable system which builds on the previous sprints. After the sprint, a review is done to determine how well the plan was met and if things need to be adapted in the next sprint.
+This project uses an agile development methodology. Working in sprints, starting with testing the model against the dataset, then working on the backend and frontend implementation separately. Once these foundational systems are in place the following sprints will focus on system improvement and deployment.
 
 ### Sprint 1: ML Prototype | 17/09/25 – 28/09/25
 
-Create a Jupyter Notebook to test the models performance against the dataset.
+Create a Jupyter Notebook to test the model's performance against the dataset.
 
 **Plan:**
 
@@ -67,9 +66,9 @@ Create a Jupyter Notebook to test the models performance against the dataset.
 
 **Design:**
 
-- Setup project, imports and notebook enviroment ✅
+- Setup project, imports and notebook environment ✅
 - Define preprocessing steps ✅
-- Select simularity metric: cosine (standard) ✅
+- Select similarity metric: cosine (standard) ✅
 
 **Develop:**
 
@@ -110,7 +109,7 @@ Create a simple API using Flask that can be called with a query to retrieve k to
 **Develop:**
 
 - Create ask api route ✅
-- Create main.py with blueprint reference to api ✅
+- Create `main.py` with blueprint reference to api ✅
 - Create scripts to get data and generate embeddings for answers ✅
 - Implement get_answers method to retrieve top-k answers and similarity scores ✅
 - Separate data and model loading to run on startup ✅
