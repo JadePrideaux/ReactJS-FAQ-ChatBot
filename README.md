@@ -33,14 +33,27 @@ I have studied machine learning and have been developing my full-stack skills si
 ReactJS-FAQ-ChatBot
 
 - backend/
+  - data - dataset + pregenerated embeddings, (not saved on GitHub)
+  - logic - scripts to get the dataset, generate embeddings, retrieve the answers and startup logic.
+  - routes - the API route to retrieve answers based on the given question
 - frontend/
+  - src/
+    - assets
+    - components - React components for the webpage
+    - hooks - The custom useAnswers hook that calls the API
 - notebooks/
+  - model.ipynb - the main testing notebook, running though the model and testing it on the dataset
+  - test.py - a script to test the API
 - README.md
 - .gitignore
 
 ## Development Methodology and Planning
 
+This project uses an agile methodology, working in sprints to iterate on subsystems and integrate them into the full system. Each sprint starts by creating a plan for the sprint then designing how the system will adapt to align with that plan. Then development will be done followed by some simple testing to ensure the plan is implemented. Each sprint aims to have some workable system which builds on the previous sprints. After the sprint, a review is done to determine how well the plan was met and if things need to be adapted in the next sprint.
+
 ### Sprint 1: ML Prototype | 17/09/25 – 28/09/25
+
+Create a Jupyter Notebook to test the models performance against the dataset.
 
 **Plan:**
 
@@ -84,6 +97,8 @@ ReactJS-FAQ-ChatBot
 
 ### Sprint 2: Backend API | 29/09/25 - Current
 
+Create a simple API using Flask that can be called with a query to retrieve k top answers based on similarity.
+
 **Plan:**
 
 - Understand how flask works and how to build the backend of this system ✅
@@ -117,6 +132,8 @@ ReactJS-FAQ-ChatBot
 ---
 
 ### Sprint 3: Frontend | 06/10/25 - 10/10/25
+
+Create a simple frontend using React to call the API, sending a string and receiving a set of answers. Crafting a simple, usable form for users to send queries.
 
 **Plan:**
 
@@ -155,15 +172,7 @@ ReactJS-FAQ-ChatBot
 
 ---
 
-### Sprint 4: Fixing and Polishing | Start Goal: 13/10/25
+### Sprint 4: Fixing and Polishing | 20/10/25 -
 
 - Fix main issues and general polish of project, including commenting code and documentation.
-- Consider deployment options, unsure how easy due to size of project data.
-
-## Challenges, Actions and Results
-
-- **Challenge**: Understood how to implement a FAQ chatbot that accurately retrieves relevant answers to questions.
-- **Action**: Learned about semantic search and explored the concept of mapping questions to answers in the same vector space.
-- **Result**: Gained understanding of the approach and developed a foundation to start building a ML prototype.
-
-- **Challenge**: Issues with Python Virtual machine - consider using UV in future
+- Consider deployment options (vercel, hugging face spaces).
