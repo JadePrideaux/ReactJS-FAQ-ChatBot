@@ -16,6 +16,6 @@ embedder = SentenceTransformer("all-MiniLM-L6-v2")
 # Generate embeddings
 answer_embeddings = embedder.encode_document(answers, convert_to_tensor=True, show_progress_bar=True)
 
-# Save embeddings and answers
+# Save embeddings, answers and questions
 torch.save(answer_embeddings, "backend/data/answer_embeddings.pt")
-df[["answer"]].to_csv("backend/data/answers.csv", index=False)
+df[["question", "answer"]].to_csv("backend/data/dataset.csv", index=False)

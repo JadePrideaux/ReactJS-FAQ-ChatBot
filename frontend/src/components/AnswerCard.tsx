@@ -1,11 +1,12 @@
 import ReactMarkdown from "react-markdown";
 
 type Props = {
+  question: string;
   answer: string;
   score?: number;
 };
 
-const AnswerCard = ({ answer, score }: Props) => {
+const AnswerCard = ({ question, answer, score }: Props) => {
   let color = `rgb(255, 0, 0)`;
   if (score != null) {
     const red = 200 - Math.round(200 * score);
@@ -20,6 +21,9 @@ const AnswerCard = ({ answer, score }: Props) => {
         backgroundColor: color,
       }}
     >
+      <h2>
+        <ReactMarkdown>{question}</ReactMarkdown>
+      </h2>
       <ReactMarkdown>{answer}</ReactMarkdown>
       {score && <small>Score: {score}</small>}
     </div>

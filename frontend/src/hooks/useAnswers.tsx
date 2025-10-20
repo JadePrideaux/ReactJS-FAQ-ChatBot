@@ -1,6 +1,7 @@
 import { useState } from "react";
 
 export type Answer = {
+  question: string;
   answer: string;
   score?: number;
 };
