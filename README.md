@@ -173,5 +173,30 @@ Create a simple frontend using React to call the API, sending a string and recei
 
 ### Sprint 4: Fixing and Polishing | 20/10/25 -
 
-- Fix main issues and general polish of project, including commenting code and documentation.
-- Consider deployment options (vercel, hugging face spaces).
+
+**Plan:**
+
+- Fix main project issues and prepare for deployment in next sprint.
+
+**Design:**
+
+- Recognise what needs to be added/changed.
+
+**Develop:**
+
+- Adapt API and Fetch to retrieve correct question alongside retrieved answers.
+- Change backend to only generate embeddings/csvs if they do not already exist and make this happen automatically before running.
+- Tidy backend code, adding docstrings to each function.
+- Adjust answer components to accommodate questions.
+
+**Test:**
+
+- Test full flow of data through the system at teach stage again to ensure the system fully works still.
+
+**Deploy:**
+
+- Project should be at a reasonably polished state, ready to consider deployment.
+
+**Review:**
+
+- Determine how well the system aligns with improvement goals.
