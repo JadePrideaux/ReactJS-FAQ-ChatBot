@@ -1,3 +1,4 @@
+import { useState } from "react";
 import ReactMarkdown from "react-markdown";
 
 type Props = {
@@ -7,6 +8,12 @@ type Props = {
 };
 
 const AnswerCard = ({ question, answer, score }: Props) => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handleClick = () => {
+    setIsOpen((previousValue) => !previousValue);
+  };
+
   let color = `rgb(255, 0, 0)`;
   if (score != null) {
     const red = 200 - Math.round(200 * score);
@@ -15,17 +22,23 @@ const AnswerCard = ({ question, answer, score }: Props) => {
   }
 
   return (
-    <div
-      className="card"
-      style={{
-        backgroundColor: color,
-      }}
-    >
-      <h2>
-        <ReactMarkdown>{question}</ReactMarkdown>
-      </h2>
-      <ReactMarkdown>{answer}</ReactMarkdown>
-      {score && <small>Score: {score}</small>}
+    <div className="card">
+      <button
+        onClick={handleClick}
+        style={{
+          backgroundColor: color,
+        }}
+      >
+        <h2 className="question">
+          <ReactMarkdown>{question}</ReactMarkdown>
+        </h2>
+      </button>
+      {isOpen && (
+        <div>
+          <ReactMarkdown>{answer}</ReactMarkdown>
+          {score && <small>Score: {score}</small>}
+        </div>
+      )}
     </div>
   );
 };

@@ -184,7 +184,7 @@ Create a simple frontend using React to call the API, sending a string and recei
 
 **Develop:**
 
-- Adapt API and Fetch to retrieve correct question alongside retrieved answers.
+- Adapt API and Fetch to retrieve correct question alongside retrieved answers. ✅
 - Change backend to only generate embeddings/csvs if they do not already exist and make this happen automatically before running.
 - Tidy backend code, adding docstrings to each function.
 - Adjust answer components to accommodate questions.
