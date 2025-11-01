@@ -4,7 +4,11 @@ import torch
 from logic.startup import answer_embeddings, answers, embedder, questions
 
 
-def get_answers(question: str, top_k: int = 3):
+def get_answers(question: str, top_k: int = 3) -> list[dict]:
+  """
+  Given a question string, returns the top k answers based on cosine similarity.
+
+  """
   # Generate embedding for question
   question_embedding = embedder.encode_query(question, convert_to_tensor=True)
 

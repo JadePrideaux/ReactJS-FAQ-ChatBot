@@ -192,6 +192,7 @@ Create a simple frontend using React to call the API, sending a string and recei
 **Test:**
 
 - Test full flow of data through the system at teach stage again to ensure the system fully works still.
+- Test API edge cases to ensure correct error handling ✅
 
 **Deploy:**
 
