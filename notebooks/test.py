@@ -1,6 +1,9 @@
 import requests
 
-resp = requests.post("http://127.0.0.1:5000/ask", json={"question": "how to use react hooks?", "top_k": 3})
-print(resp.status_code)
-print(resp.text)
-print(resp.json())
+
+def test():
+  resp = requests.post("http://127.0.0.1:5000/ask", json={"question": "question"})
+  print(resp.status_code, resp.json())
+
+if __name__ == "__main__":
+  test()
