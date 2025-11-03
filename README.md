@@ -171,16 +171,16 @@ Create a simple frontend using React to call the API, sending a string and recei
 
 ---
 
-### Sprint 4: Fixing and Polishing | 20/10/25 -
+### Sprint 4: Fixing and Polishing | 20/10/25 - 02/11/25
 
 
 **Plan:**
 
-- Fix main project issues and prepare for deployment in next sprint.
+- Fix main project issues and prepare for deployment in next sprint. ✅
 
 **Design:**
 
-- Recognise what needs to be added/changed.
+- Recognise what needs to be added/changed. ✅
 
 **Develop:**
 
@@ -196,8 +196,38 @@ Create a simple frontend using React to call the API, sending a string and recei
 
 **Deploy:**
 
-- Project should be at a reasonably polished state, ready to consider deployment.
+- Some project polish complete ✅
 
 **Review:**
 
-- Determine how well the system aligns with improvement goals.
+- Deployment should be considered next since backend structure may depend on this.
+- Still some frontend polish is required, but deployment should be the next priority.
+
+### Sprint 55: Deployment | 03/11/25 -
+
+
+**Plan:**
+
+- Consider deployment options, vercel, huggingface spaces etc?
+- Consider what elements of the codebase need to change to adapt to the chosen deployment option.
+- Consider what elements of the codebase need to change to ensure API security for deployment.
+
+**Design:**
+
+- 
+
+**Develop:**
+
+- 
+
+**Test:**
+
+- 
+
+**Deploy:**
+
+- 
+
+**Review:**
+
+- 
