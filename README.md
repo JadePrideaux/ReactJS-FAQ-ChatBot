@@ -46,188 +46,55 @@ I have studied machine learning and have been developing my full-stack skills si
 └── .gitignore
 ```
 
+## Screenshots
+
+### Input Form
+![Input Form](/docs/screenshots/InputForm.png)
+
+### Query: "What is React?"
+![What is React](/docs/screenshots/React.png)
+
+### Query: "Can you describe how to create a custom hook?"
+![Custom Hooks](/docs/screenshots/CustomHooks.png)
+
 ## Development Methodology and Planning
 
 This project uses an agile development methodology. Working in sprints, starting with testing the model against the dataset, then working on the backend and frontend implementation separately. Once these foundational systems are in place the following sprints will focus on system improvement and deployment.
 
 ### Sprint 1: ML Prototype | 17/09/25 – 28/09/25
 
-Create a Jupyter Notebook to test the model's performance against the dataset.
+Created a Jupyter Notebook to test the model's performance against the dataset.
 
-**Plan:**
-
-- Define project scope ✅
-- Decide tech stack ✅
-- Outline approach: sentence embedding + cosine similarity retrieval ✅
-- Decide on development methodology ✅
-- Gather resources: dataset and pre-trained model ✅
-- Create README and sprint structure ✅
-- Plan notebook sections ✅
-
-**Design:**
-
-- Setup project, imports and notebook environment ✅
-- Define preprocessing steps ✅
-- Select similarity metric: cosine (standard) ✅
-
-**Develop:**
-
-- Load dataset from Kaggle ✅
-- Create clean Q and A pairs ✅
-- Split dataset ✅
-- Generate embeddings ✅
-- Semantic Search retrieval ✅
-
-**Test:**
-
-- Compare test sets question and answer similarity ✅
-- Compare similarity of top 3 answers with new questions ✅
-- Compare similarity score between chosen answers and correct answers ✅
-
-**Deploy:**
-
-- Notebook prototype runnable locally ✅
-
-**Review:**
-
-- Analyses similarity scores ✅
+- Selected Sentence-BERT Semantic search model.
+- Cleaned and prepared dataset, with a 90/10 evaluation/test split.
+- Evaluated the model's performance on unseen questions.
 
 ---
 
 ### Sprint 2: Backend API | 29/09/25 - Current
 
-Create a simple API using Flask that can be called with a query to retrieve k top answers based on similarity.
+Built a simple API using Flask that can be called with a query to retrieve k top answers based on similarity.
 
-**Plan:**
-
-- Understand how flask works and how to build the backend of this system ✅
-
-**Design:**
-
-- Create folder structure ✅
-
-**Develop:**
-
-- Create ask api route ✅
-- Create `main.py` with blueprint reference to api ✅
-- Create scripts to get data and generate embeddings for answers ✅
-- Implement get_answers method to retrieve top-k answers and similarity scores ✅
-- Separate data and model loading to run on startup ✅
-
-**Test:**
-
-- Create placeholder get_answer method and test api ✅
-- Verify correct JSON output ✅
-
-**Deploy:**
-
-- Backend server runs locally and responds to /ask ✅
-
-**Review:**
-
-- Confirm api fully functional
-- JSON response includes both answer text and similarity scores ✅
-
+- Implemented `/ask` endpoint, returning top k answers based on similarity score, alongside the scores.
+- Created Python scripts to download the dataset and generate embeddings.
+- Tested API by calling it through separate script to see if JSON is returned in the correct format.
 ---
 
 ### Sprint 3: Frontend | 06/10/25 - 10/10/25
 
-Create a simple frontend using React to call the API, sending a string and receiving a set of answers. Crafting a simple, usable form for users to send queries.
+Designed a simple frontend using React to call the API, sending a string and receiving a set of answers. Crafting a simple, usable form for users to send queries.
 
-**Plan:**
-
-- Setup React-TS and Vite ✅
-
-**Design:**
-
-- Consider how to fetch api data and how the information should be displayed ✅
-
-**Develop:**
-
-- Create API fetch ✅
-- Create simple text input for questions ✅
-- Show stringified response on frontend ✅
-- Move API fetch logic into a custom hook ✅
-- Create separate components ✅
-- Adjust CSS, to customize layout and colors ✅
-- Change answer background color based on score ✅
-- Implement react-markup to polish text ✅
-
-**Test:**
-
-- Start by getting the API and displaying of results working and then polish ✅
-- Check formatting with different types of responses (probably could use more thorough testing to check edge cases etc) ✅
-
-**Deploy:**
-
-- System is functional across the stack ✅
-
-**Review:**
-
-- Some minor usability issues may need to be solved + more testing
-- Need to adjust API to include original question, since some of the answers require context
-- Need to check formatting of large answers, possibly hiding everything and only displaying the full answer on click
-- Need to consider mobile devices
+- Created a form for query submission displayed results in React.
+- Separated design into separate React components
+- Created a custom React hook to deal with API calls
+- Implemented basic UI styling, including a score based gradient on answer components
 
 ---
 
 ### Sprint 4: Fixing and Polishing | 20/10/25 - 02/11/25
 
+Refactored both the front and backend of the system, reorganising and resolving key problems.
 
-**Plan:**
-
-- Fix main project issues and prepare for deployment in next sprint. ✅
-
-**Design:**
-
-- Recognise what needs to be added/changed. ✅
-
-**Develop:**
-
-- Adapt API and Fetch to retrieve correct question alongside retrieved answers. ✅
-- Change backend to only generate embeddings/csvs if they do not already exist and make this happen automatically before running.
-- Tidy backend code, adding docstrings to each function.
-- Adjust answer components to accommodate questions. ✅
-
-**Test:**
-
-- Test full flow of data through the system at teach stage again to ensure the system fully works still.
-- Test API edge cases to ensure correct error handling ✅
-
-**Deploy:**
-
-- Some project polish complete ✅
-
-**Review:**
-
-- Deployment should be considered next since backend structure may depend on this.
-- Still some frontend polish is required, but deployment should be the next priority.
-
-### Sprint 55: Deployment | 03/11/25 -
-
-
-**Plan:**
-
-- Consider deployment options, vercel, huggingface spaces etc?
-- Consider what elements of the codebase need to change to adapt to the chosen deployment option.
-- Consider what elements of the codebase need to change to ensure API security for deployment.
-
-**Design:**
-
-- 
-
-**Develop:**
-
-- 
-
-**Test:**
-
-- 
-
-**Deploy:**
-
-- 
-
-**Review:**
-
-- 
+- Adjusted API to send the original questions alongside the answers, displaying them together on the frontend.
+- Cleaned up backend code, adding docstrings and ensuring code in inside functions where appropriate.
+- Tested API, with missing data to verify error handling.
