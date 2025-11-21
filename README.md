@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-A simple FAQ chatbot that uses asymmetric semantic search to retrieve the top 3 closest answers from a dataset based on user questions. This project demonstrates applying NLP embeddings, Python backend APIs and a React frontend in a structured, iterative development process.
+A  FAQ retrieval system that uses asymmetric semantic search to retrieve the top k closest answers from a dataset based on user questions. This project demonstrates applying NLP embeddings, Python backend APIs and a React frontend in a structured, iterative development process.
 
 ## Motivation
 
@@ -48,13 +48,15 @@ I have studied machine learning and have been developing my full-stack skills si
 
 ## Screenshots
 
-### Input Form
-![Input Form](/docs/screenshots/InputForm.png)
+### Recall Curve Plot
+A Recall Curve plot, showing the chance paired answer is retrieved when k answers are given.
+![Recall Curve](/docs/screenshots/RecallCurve.png)
 
-### Query: "What is React?"
+### Query Responses
+Query: "What is React?"
 ![What is React](/docs/screenshots/React.png)
 
-### Query: "Can you describe how to create a custom hook?"
+Query: "Can you describe how to create a custom hook?"
 ![Custom Hooks](/docs/screenshots/CustomHooks.png)
 
 ## Development Methodology and Planning
@@ -98,3 +100,14 @@ Refactored both the front and backend of the system, reorganising and resolving 
 - Adjusted API to send the original questions alongside the answers, displaying them together on the frontend.
 - Cleaned up backend code, adding docstrings and ensuring code in inside functions where appropriate.
 - Tested API, with missing data to verify error handling.
+
+## Reflection
+
+This project gave me hands-on experience integrating a pre-trained NLP model into a full-stack application. Using Sentence-BERT embeddings, I built a Flask API and React frontend to retrieve answers from an FAQ dataset.
+
+Since the model was not fine-tuned on this dataset, accuracy was limited. Improvements could include:
+
+- Comparing not just the input question to dataset answers, but also considering question–answer pairs to add context.
+- Fine-tuning the model on the dataset so embeddings better reflect domain-specific language.
+
+Overall, this project demonstrates my ability to work in structured sprints and deliver a fully integrated AI-powered system, from model evaluation to API and frontend development.
